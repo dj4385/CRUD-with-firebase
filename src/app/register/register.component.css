@@ -1,0 +1,8 @@
+.registerForm{
+    margin-top: 100px;
+}
+.usericon > i{
+    position: absolute;
+    top: 54px;
+    z-index: 1;
+}

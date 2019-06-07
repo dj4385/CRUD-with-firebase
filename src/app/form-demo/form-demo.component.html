@@ -1,0 +1,9 @@
+<form #demo="ngForm" class="p-5">
+  <input type="number" name="val" id="val" (change)="showResult($event)">
+
+<div *ngFor="let item of form; let i=index">
+  <input type="text" name="value" id="" [(ngModel)]="form[i].inputValue">
+  <span class="removeInputFiled(i)">x</span>
+</div>
+</form>
+<h2>{{form | json}}</h2>

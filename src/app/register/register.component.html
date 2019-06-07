@@ -1,0 +1,53 @@
+<div class="container registerForm">
+  <div class="usericon d-flex justify-content-center">
+      <i class="fa fa-5x fa-user-circle" aria-hidden="true"></i>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="jumbotron">
+        <form class="form-horizontal" #regForm="ngForm" >
+          <div class="form-group">
+            <label for="">Full Name</label> <span class="text-danger ml-2" *ngIf="name.invalid && (name.dirty || name.touched)">Invalid Name*</span>
+            <input type="text" name="fname" id="fname" class="form-control" placeholder="" [(ngModel)]="user.fname" #name="ngModel" required>
+            <small id="helpId" class="text-muted  ">Enter Full Name</small>
+          </div>
+          <div class="form-group">
+            <label for="">Gender</label> <span class="text-danger ml-2" *ngIf="gender.invalid && (gender.dirty || gender.touched)">Select Gender*</span>
+            <select name="gender" id="gender" [(ngModel)]="user.gender" class="form-control" #gender="ngModel" required>
+              <option *ngFor="let gen of gender_" value="gen" >{{gen}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="">Contact Number</label> <span class="text-danger ml-2" *ngIf="name.invalid && (name.dirty || name.touched)">Invalid Contact Number*</span>
+            <input type="text" name="contact" id="contact" class="form-control" placeholder="" [(ngModel)]="user.contact" #name="ngModel" maxlength="10" required>
+            <small id="helpId" class="text-muted  ">Enter Contact Number</small>
+          </div>
+          <div class="form-group">
+            <label for="">Email Address</label> <span class="text-danger ml-2" *ngIf="mail.invalid && (mail.dirty || mail.touched)">Invalid Email Address*</span>
+            <input type="text" name="email" id="email" class="form-control" placeholder="" [(ngModel)]="user.email" #mail="ngModel" email required>
+            <small id="helpId" class="text-muted  ">Enter Valid Email Address</small>
+          </div>
+          <div class="form-group"> 
+            <label for="">Password</label> <span class="text-danger ml-2" *ngIf="password.invalid && (password.dirty || password.touched)">Invalid Password*</span>
+            <input type="password" name="password" id="password" class="form-control" placeholder="" [(ngModel)]="user.password" #password="ngModel" required >
+            <small id="helpId" class="text-muted ">Enter Password </small>
+          </div>
+          <!-- <div class="form-group"> 
+            <label for="">Upload Image</label>
+            <input type="file" name="" id="" class="form-control"  (change)="imageUpload($event)">
+            <small id="helpId" class="text-muted">Upload Image (.jpg,.png,.jpeg) </small>
+          </div> -->
+          <div class="form-group d-flex justify-content-end">
+            <button class="btn btn-danger" [routerLink]="['/login']" >Cancel</button>
+            <button class="btn" [disabled]="regForm.invalid" [ngClass]="{'btn-success': regForm.valid}" (click)="registerUser()">Sign Up</button>
+            
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- regForm.submitted : this will show error message when user click on button -->

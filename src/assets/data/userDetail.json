@@ -1,0 +1,25 @@
+{
+  "user": [
+    {
+      "name": "Dheeraj Sharma",
+      "email": "dj4385@gmail.com",
+      "contact": 8745006149,
+      "password": "vampre1@",
+      "id": 1
+    },
+    {
+      "name": "Amit",
+      "email": "amit@gmail.com",
+      "contact": 8965412365,
+      "password": "vampire1@",
+      "id": 2
+    },
+    {
+      "name": "Karan",
+      "email": "karan@gmail.com",
+      "contact": 8965412587,
+      "password": "krana@123",
+      "id": 3
+    }
+  ]
+}
